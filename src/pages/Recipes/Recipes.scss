@@ -1,0 +1,136 @@
+p {
+  margin: 0;
+}
+
+.recipes {
+  // padding: 0 20px 20px 20px;
+  position: relative;
+
+  &__meals {
+    display: grid;
+    justify-content: center;
+    column-gap: 0px;
+    row-gap: 30px;
+  
+    grid-template-columns: 350px 350px 350px 350px;
+
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.category {
+  &--title {
+    font-size: 20px;
+  }
+}
+.recipe {
+  &__meal {
+    text-decoration: none;
+    color: white;
+    // font-weight: 700;
+    // border: 1px solid yellow;
+    border-radius: 10px;
+    padding: 10px;
+    // background-color: blue;
+    // background-color: #ffa500;
+    background-color: #4a08ff;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+
+    width: 250px;
+    transition: transform 0.8s;
+
+    // background-color: #ffa500;
+    // opacity: 0.8;
+
+    border: 1px solid #ffa500;
+    border-radius: 20px;
+  }
+
+  &__container:hover {
+    transform: scale(1.05);
+  }
+
+  &__image {
+    display: block;
+    height: 150px;
+    border-radius: 15px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 5px;
+  }
+
+  &__favourites {
+    display: flex;
+    align-items: center;
+  }
+
+  &__fav {
+    background-color: beige;
+    width: 18px;
+    height: 18px;
+  }
+
+  &__details {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+
+.dropdown-divider {
+  margin-bottom: 20px;
+}
+
+.category--title {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.actions {
+  display: flex;
+  column-gap: 50px;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.search {
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.pagination {
+
+  &--own-styles {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+
+    transform: translate( -50%);
+  }
+
+  &__new--list {
+    justify-content: center;
+  }
+
+  &__is-active {
+    background-color: #4a08ff;
+    color: #fff;
+  }
+}
