@@ -5,6 +5,12 @@ module.exports = [
       browser: true,
       es2021: true,
     },
+    overrides: [
+      {
+        files: ['*.js'],
+        excludedFiles: ['**/*.test.js', '**/node_modules/**']
+      }
+    ],
     extends: [
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
@@ -32,6 +38,7 @@ module.exports = [
     plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
     rules: {
       'no-var': 'error',
+      'no-console': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
     },

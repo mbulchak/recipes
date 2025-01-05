@@ -1,0 +1,19 @@
+.favourites__list {
+  display: flex;
+  position: relative;
+}
+
+.button-ingredient {
+  height: 50px;
+}
+
+.modal__favourites {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+
+}

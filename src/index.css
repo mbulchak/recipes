@@ -1,3 +1,5 @@
 @import './App.scss';
 @import './pages/Recipes/Recipes.scss';
 @import './pages/Recipe/Recipe.scss';
+@import './pages/Favourites/Favourites.scss';
+@import './components/FavouritesIngredientsModal/FavouritesIngredientsModal.scss';
