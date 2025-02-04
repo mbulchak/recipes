@@ -11,7 +11,6 @@ import { RecipeList } from './pages/Recipes/Recipes.tsx';
 import { RecipeItem } from './pages/Recipe/Recipe.tsx';
 import { FavouritesPage } from './pages/Favourites/Favourites.tsx';
 import { ErrorRecipes } from './components/ErrorRecipes/ErrorRecipes.tsx';
-import { FavouritesIngredientsModal } from './components/FavouritesIngredientsModal/FavouritesIngredientsModal.tsx';
 
 const router = createBrowserRouter([
   {
@@ -32,12 +31,6 @@ const router = createBrowserRouter([
         path: '/favourites',
         element: <FavouritesPage />,
         errorElement: <div className="section-padding">Not implemented favs</div>,
-        // children: [
-        //   {
-        //     path: '/favourites/ingredients',
-        //     element: <FavouritesIngredientsModal />
-        //   }
-        // ],
       },
     ],
   },

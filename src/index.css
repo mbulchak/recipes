@@ -1,5 +1,8 @@
+@import './styles/mixins.scss';
 @import './App.scss';
+@import './components/Pagination/Pagination.scss';
 @import './pages/Recipes/Recipes.scss';
+@import './components/RecipeCart/RecipeCart.scss';
 @import './pages/Recipe/Recipe.scss';
 @import './pages/Favourites/Favourites.scss';
 @import './components/FavouritesIngredientsModal/FavouritesIngredientsModal.scss';

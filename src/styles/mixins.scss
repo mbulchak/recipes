@@ -1,0 +1,18 @@
+@mixin on-tablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin on-tablet-bigger {
+  @media (min-width: 920px) {
+    // @content - means what I put while using this mixin
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1224px) {
+    @content;
+  }
+}

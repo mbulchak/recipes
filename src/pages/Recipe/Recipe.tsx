@@ -24,7 +24,6 @@ export const RecipeItem = () => {
           setSelectedMeal(meal);
         });
 
-        // setSelectedMeal(res)
       })
       .catch(console.error);
   }, []);
@@ -38,7 +37,6 @@ export const RecipeItem = () => {
   }
 
   let startMeal: { [key: string]: any } = {};
-  // let ingredientAndMeasure: { [key: string]: any } = {};
   let ingredients: { [key: string]: any } = {};
   let measures: { [key: string]: any } = {};
 
@@ -69,13 +67,6 @@ export const RecipeItem = () => {
       }
     }
 
-    // if (item.includes('Youtube')) {
-    //   const video = meal[item as keyof Recipe];
-    //   if (video !== null) {
-    //     videoYouTube = video;
-    //   }
-    // }
-
     if (
       item.includes('str') &&
       !item.includes('Ingredient') &&
@@ -85,8 +76,6 @@ export const RecipeItem = () => {
       const normal = item.slice(3);
 
       startMeal[normal] = meal[item as keyof Recipe];
-
-      // startMeal[item] = meal[item as keyof Recipe];
     }
   }
 
@@ -94,24 +83,7 @@ export const RecipeItem = () => {
     if (startMeal[key] === null || startMeal[key] === undefined) {
       delete startMeal[key];
     }
-
-    // if (typeof startMeal[key] === 'string') {
-    //   if (startMeal[key].trim() === '') {
-
-    //     delete startMeal[key];
-    //   }
-    // }
   }
-
-  // for (const ingrMeas in ingredientAndMeasure) {
-  //   if (typeof ingredientAndMeasure[ingrMeas] === 'string') {
-  //     if (ingredientAndMeasure[ingrMeas].trim() === '') {
-  //       delete ingredientAndMeasure[ingrMeas];
-  //     }
-  //   }
-  // }
-
-  // console.log(ingredientAndMeasure);
 
   return (
     <div className="meal">
@@ -124,7 +96,6 @@ export const RecipeItem = () => {
         Back
       </button>
 
-      {/* <div>Recipe Item {selectedMeal?.strMeal}</div> */}
       <h2 className="meal__title">{selectedMeal?.strMeal}</h2>
 
       <div className="meal__image">
@@ -133,18 +104,12 @@ export const RecipeItem = () => {
 
       <div className="meal__description">
         <table>
-          {/* <tr>
-            <th>Name</th>
-
-            <th>Value</th>
-          </tr> */}
-
           {Object.entries(startMeal).map(([name, value]) => {
             return (
               <>
                 <tr>
-                  <td>{name}</td>
-                  <td>{value}</td>
+                  <td className='meal__name'>{name}</td>
+                  <td className='meal__value'>{value}</td>
                 </tr>
               </>
             );
@@ -159,9 +124,7 @@ export const RecipeItem = () => {
           <div className="ingredients">
             {Object.entries(ingredients).map(([, ingredient]) => {
               return (
-                // console.log(name)
                 <>
-                  {/* <div>{name}</div> */}
                   <div key={ingredient}>{ingredient}</div>
                 </>
               );

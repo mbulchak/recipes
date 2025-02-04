@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { getRecipes } from '../../services/getRecipes';
 import { Recipe } from '../../types/Recipe';
 
@@ -8,9 +7,9 @@ import { getFilteredRecipesByCategory } from '../../utils/getFilteredRecipesByCa
 import { CategoryFiltered } from '../../types/CategoryFiltered';
 import { getRecipeFromInput } from '../../services/getIntutRecipe';
 
-import ReactPaginate from 'react-paginate';
 import { RecipeCart } from '../../components/RecipeCart';
 import { useAppSelector } from '../../app/hooks';
+import { Pagination } from '../../components/Pagination';
 
 export const RecipeList = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -31,7 +30,6 @@ export const RecipeList = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  
   // redux
   const favourites = useAppSelector((state) => state.favourites.favourites);
 
@@ -44,7 +42,7 @@ export const RecipeList = () => {
     const value = event.target.value;
     setQuery(value);
 
-    // to reset while filtering
+    // to reset pagination while filtering
     setItemOffset(0);
     setActivePage(0);
 
@@ -67,20 +65,9 @@ export const RecipeList = () => {
 
   // pagination
   const itemsPerPage = 8;
-
   const endOffset = itemOffset + itemsPerPage;
-
   const currentItems = filteredRecipes.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(filteredRecipes.length / itemsPerPage);
 
-  const handlePageClick = (event: { selected: number }) => {
-    const newOffset = (event.selected * itemsPerPage) % filteredRecipes.length;
-
-    setItemOffset(newOffset);
-    setActivePage(event.selected);
-  };
-
-  // console.log(favourites);
   return (
     <div className="recipes section-padding">
       <h2 className="recipes__title">All Recipes</h2>
@@ -144,31 +131,18 @@ export const RecipeList = () => {
               })}
             </div>
 
-            <div className="pagination is-rounded pagination--own-styles">
-              <ReactPaginate
-                breakLabel="..."
-                nextLabel=">"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={7}
-                marginPagesDisplayed={1}
-                pageCount={pageCount}
-                previousLabel="<"
-                renderOnZeroPageCount={null}
-                containerClassName="pagination-list pagination__new--list"
-                pageLinkClassName="pagination-link"
-                previousLinkClassName="pagination-previous"
-                nextLinkClassName="pagination-next"
-                activeLinkClassName="pagination__is-active"
-                forcePage={activePage}
-              />
-            </div>
+            <Pagination
+              filteredRecipes={filteredRecipes}
+              itemsPerPage={itemsPerPage}
+              setItemOffset={setItemOffset}
+              activePage={activePage}
+              setActivePage={setActivePage}
+            />
           </div>
         </>
       ) : (
         <div>There are no recipes of this criteria</div>
       )}
-
-      {/* {!filteredRecipes.length && <div>There are no recipes of this criteria</div>} */}
     </div>
   );
 };

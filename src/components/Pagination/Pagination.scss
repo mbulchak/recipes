@@ -1,0 +1,31 @@
+@import './../../styles/mixins.scss';
+
+.pagination {
+  &--own-styles {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    margin-bottom: 20px;
+
+    transform: translate( -50%);
+  }
+
+  &__new--list {
+    justify-content: center;
+  }
+
+  &__is-active {
+    background-color: #4a08ff;
+    color: #fff;
+  }
+
+  &-link,
+  &-previous,
+  &-next {
+    font-size: 13px;
+
+    @include on-tablet {
+      font-size: 15px;
+    }
+  }
+}

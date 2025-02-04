@@ -16,18 +16,26 @@
   margin: 50px;
   padding: 20px;
   background-color: #99b3ff;
-  // background-color:#99b3ff;
-  // opacity: 0.8;?
   border-radius: 14px;
-  // color: #4a08ff; #ffa500
-  // color: #b3b36b;
+  // #ffa500
 
+  &__description {
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    padding-right: 15px;
+  }
+  &__value {
+    font-size: 13px;
+    padding-right: 18px;
+    overflow-wrap: break-word;
+  }
 
   &__image {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
-    // align-items: center;
 
     &--main {
       width: 350px;
@@ -39,11 +47,3 @@
 .meal__title {
   text-align: center;
 }
-
-// table, th, td {
-//   border:1px solid black;
-// }
-
-// table {
-//   background-color: antiquewhite;
-// }

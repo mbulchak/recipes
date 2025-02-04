@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, Navigate } from 'react-router-dom';
 import './App.scss';
 import { useEffect } from 'react';
 import { useAppDispatch } from './app/hooks';
@@ -18,16 +18,19 @@ function App() {
       <header className="header">
         <nav className="nav">
           <ul className="nav__list">
-            <li className="nav__link">
+             {/* <li className="nav__link">
               <NavLink className="nav__item" to="/">
                 Home
               </NavLink>
-            </li>
+            </li> */}
+            <Navigate to="/recipes" />
+
             <li className="nav__link">
               <NavLink className="nav__item" to="/recipes">
                 Recipes
               </NavLink>
             </li>
+
             <li className="nav__link">
               <NavLink className="nav__item" to="/favourites">
                 Favourites

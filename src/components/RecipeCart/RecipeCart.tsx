@@ -6,6 +6,7 @@ import { IconFullHeart } from '../../icons/IconFullHeart';
 import { useAppDispatch } from '../../app/hooks';
 import { toggleFavourites } from '../../features/favourites/favourites';
 import { localFavourites } from '../../utils/localFavourites';
+import './RecipeCart.scss';
 
 type Props = {
   recipe: Recipe;
@@ -31,8 +32,7 @@ export const RecipeCart: React.FC<Props> = ({ recipe, isFavourite = false, isRec
           More info
         </NavLink>
 
-        <button /* onClick={() => setFavourites((prev) => [...prev, recipe.idMeal])} */
-          // onClick={handleToggleFavourite}
+        <button
           onClick={() => {
             dispatch(toggleFavourites(recipe));
             localFavourites.toggleFavourites(recipe);
