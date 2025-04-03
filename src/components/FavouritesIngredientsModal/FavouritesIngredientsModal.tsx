@@ -13,7 +13,6 @@ export const FavouritesIngredientsModal: React.FC<Props> = ({ favourites, onIsBu
   const instructions = [];
 
   for (let favourite of favourites) {
-    console.log(favourite);
     for (let key in favourite) {
       const normalizeValue = favourite[key as keyof Recipe]?.trim() || '';
 
@@ -67,10 +66,6 @@ export const FavouritesIngredientsModal: React.FC<Props> = ({ favourites, onIsBu
   const secondHalfOfAllIngredAndMeasures = Object.entries(allIngredientsAndMeasures).slice(
     Math.floor(lengthOfAllIngredAndMeasures / 2),
   );
-
-  console.log('all first', instructions);
-  // console.log('all second', secondHalfOfAllIngredAndMeasures);
-  // console.log('all ingred', lengthOfAllIngredAndMeasures);
 
   return (
     <>

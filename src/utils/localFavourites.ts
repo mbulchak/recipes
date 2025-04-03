@@ -10,7 +10,6 @@ export const localFavourites = {
   },
   toggleFavourites(value: Recipe) {
     const storedFavourites = localStore.get(key) || [];
-    console.log(storedFavourites);
     const allFavouriteRecipes = [];
 
     const isRecipeExists = storedFavourites.find((fav: Recipe) => fav.idMeal === value.idMeal);

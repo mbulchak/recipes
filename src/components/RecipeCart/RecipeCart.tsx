@@ -18,7 +18,7 @@ export const RecipeCart: React.FC<Props> = ({ recipe, isFavourite = false, isRec
   const dispatch = useAppDispatch();
 
   return (
-    <div key={recipe.idMeal} className="recipe__container">
+    <div className="recipe__container">
       <img className="recipe__image" src={recipe.strMealThumb} alt="Recipe Image" />
 
       <div className="recipe__details">

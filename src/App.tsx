@@ -18,11 +18,6 @@ function App() {
       <header className="header">
         <nav className="nav">
           <ul className="nav__list">
-             {/* <li className="nav__link">
-              <NavLink className="nav__item" to="/">
-                Home
-              </NavLink>
-            </li> */}
             <Navigate to="/recipes" />
 
             <li className="nav__link">

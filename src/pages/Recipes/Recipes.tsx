@@ -50,7 +50,6 @@ export const RecipeList = () => {
       .then((res) => {
         const result = res.meals;
 
-        console.log(res);
         setRecipes(result);
       })
       .catch(console.error);
@@ -94,11 +93,6 @@ export const RecipeList = () => {
                 <option value="Seafood">Seafood</option>
                 <option value="Pasta">Pasta</option>
 
-                {/* {Object.entries(CATEGORY_OPTIONS).map(([optionCategory, text]) => {
-                return (
-                  <option key={optionCategory} value={text}>{text}</option>
-                )
-              })} */}
               </select>
             </span>
           </p>
